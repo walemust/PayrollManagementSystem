@@ -17,43 +17,38 @@ export class EmployeesService {
 
   constructor(private http: HttpClient) {}
 
-  getAllEmployees2(): Observable<Employee[]> {
-    console.log('about to make request');
-    const response = this.http.get<Employee[]>(
-      'https://localhost:7130/api/employees'
-    );
-    console.log(response);
-    return response;
-  }
+  // getAllEmployees2(): Observable<Employee[]> {
+  //   console.log('about to make request');
+  //   const response = this.http.get<Employee[]>(
+  //     'https://localhost:7130/api/employees'
+  //   );
+  //   console.log(response);
+  //   return response;
+  // }
   getAllEmployees(): Observable<Employee[]> {
     console.log('about to make request');
-    return this.http
-      .get<Employee[]>('https://localhost:7130/api/employees')
-      .pipe(
-        map((data) => {
-          return data;
-        }),
-        tap((res) => console.log(JSON.stringify(res)))
-      );
+    return this.http.get<Employee[]>(this.baseApiUrl + '/api/Employees').pipe(
+      map((data) => {
+        return data;
+      }),
+      tap((res) => console.log(JSON.stringify(res)))
+    );
   }
 
   addEmployees(addEmployee: Employee): Observable<Employee> {
-    // const httpOptions = {
-    //   headers: new HttpHeaders({
-    //     'Content-Type': 'application/json',
-    //     'Access-Control-Allow-Origin': '*',
-    //     'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
-    //     'Access-Control-Allow-Headers': 'application/json',
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,OPTIONS',
+        'Access-Control-Allow-Headers': 'application/json',
 
-    //     //'HTTP/1.1': '200 OK',
-    //   }),
-    // };
-    addEmployee.id = '00000000-0000-0000-0000-000000000000';
+        //'HTTP/1.1': '200 OK',
+      }),
+    };
+    //addEmployee.id = '00000000-0000-0000-0000-000000000000';
     return this.http
-      .post<Employee>(
-        'https://cors-anywhere.herokuapp.com/https://localhost:7130/api/employees/',
-        addEmployee
-      )
+      .post<Employee>('http://localhost:41712/api/Employees', addEmployee)
       .pipe(
         map((data) => {
           return data;
@@ -63,12 +58,9 @@ export class EmployeesService {
       );
   }
 
-  getEmployee(id: string): Observable<Employee> {
+  getEmployee(id: number): Observable<Employee> {
     return this.http
-      .get<Employee>(
-        'https://cors-anywhere.herokuapp.com/https://localhost:7130/api/employees' +
-          id
-      )
+      .get<Employee>('http://localhost:41712/api/Employees/' + id)
       .pipe(
         map((data) => {
           return data;
@@ -79,13 +71,12 @@ export class EmployeesService {
   }
 
   updateEmployee(
-    id: string,
+    id: any,
     updateEmployeeRequest: Employee
   ): Observable<Employee> {
     return this.http
       .put<Employee>(
-        'https://cors-anywhere.herokuapp.com/https://localhost:7130/api/employees' +
-          id,
+        `http://localhost:41712/api/Employees/${id}`,
         updateEmployeeRequest
       )
       .pipe(
@@ -97,12 +88,9 @@ export class EmployeesService {
       );
   }
 
-  deleteEmployee(id: string): Observable<Employee> {
+  deleteEmployee(id: any): Observable<Employee> {
     return this.http
-      .delete<Employee>(
-        'https://cors-anywhere.herokuapp.com/https://localhost:7130/api/employees' +
-          id
-      )
+      .delete<Employee>('http://localhost:41712/api/Employees/' + id)
       .pipe(
         map((data) => {
           return data;

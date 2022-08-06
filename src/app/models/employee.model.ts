@@ -1,5 +1,6 @@
 export interface Employee {
-  id: string;
+  //updateEmployee(id: number, employeeDetails: Employee): unknown;
+  id: number;
   name: string;
   email: string;
   phone: number;
