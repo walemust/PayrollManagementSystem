@@ -8,9 +8,20 @@ import { EmployeesListComponent } from './components/employees/employees-list/em
 import { AddEmployeeComponent } from './components/employees/add-employee/add-employee.component';
 import { FormsModule } from '@angular/forms';
 import { EditEmployeeComponent } from './components/employees/edit-employee/edit-employee.component';
+import { HomepageComponent } from './components/homepage/homepage.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
-  declarations: [AppComponent, EmployeesListComponent, AddEmployeeComponent, EditEmployeeComponent],
+  declarations: [
+    AppComponent,
+    EmployeesListComponent,
+    AddEmployeeComponent,
+    EditEmployeeComponent,
+    HomepageComponent,
+    SidebarComponent,
+    DashboardComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],

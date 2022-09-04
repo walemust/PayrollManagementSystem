@@ -1,0 +1,12 @@
+.homeimage {
+  /* background-size: contain; */
+  /* margin: 0; */
+  margin-left: 2%;
+  height: 35.1rem;
+  width: 50rem;
+  background-size: cover;
+}
+
+/* * {
+  overflow-x: hidden;
+} */
