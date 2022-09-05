@@ -1,6 +1,7 @@
-<div class="row">
-  <div class="col-lg-3"><app-sidebar></app-sidebar></div>
-  <div class="col-lg-9">
+<div class="main-wrapper">
+  <!-- <div class="col-lg-3"></div> -->
+  <app-sidebar></app-sidebar>
+  <!-- <div class="col-lg-9">
     <h1 class="mb-3">Employees</h1>
 
     <table class="table" *ngIf="employees && employees.length > 0">
@@ -29,7 +30,1485 @@
       </tbody>
     </table>
     <p *ngIf="!employees || employees.length <= 0">No Employees Found</p>
+  </div> -->
+  <div class="page-wrapper">
+    <div class="content container-fluid">
+      <div class="page-header">
+        <div class="row align-items-center">
+          <div class="col">
+            <h3 class="page-title">Employee</h3>
+            <ul class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="dashboard">Dashboard</a>
+              </li>
+              <li class="breadcrumb-item active">Employee</li>
+            </ul>
+          </div>
+          <div class="col-auto float-end ms-auto">
+            <a
+              href="#"
+              class="btn add-btn"
+              data-bs-toggle="modal"
+              data-bs-target="#add_employee"
+              ><i class="fa fa-plus"></i> Add Employee</a
+            >
+            <div class="view-icons">
+              <a href="employees" class="grid-view btn btn-link active"
+                ><i class="fa fa-th"></i
+              ></a>
+              <a href="employees_list" class="list-view btn btn-link"
+                ><i class="fa fa-bars"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row filter-row">
+        <div class="col-sm-6 col-md-3">
+          <div class="form-group form-focus">
+            <input type="text" class="form-control floating" />
+            <label class="focus-label">Employee ID</label>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="form-group form-focus">
+            <input type="text" class="form-control floating" />
+            <label class="focus-label">Employee Name</label>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="form-group custom-select">
+            <select class="select floating">
+              <option>Select Designation</option>
+              <option>Web Developer</option>
+              <option>Web Designer</option>
+              <option>Android Developer</option>
+              <option>Ios Developer</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <div class="d-grid">
+            <a href="#" class="btn btn-success w-100"> Search </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row staff-grid-row">
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          <div class="profile-widget">
+            <div class="profile-img">
+              <a href="profile" class="avatar"
+                ><img
+                  src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-02.jpg"
+                  alt=""
+              /></a>
+            </div>
+            <div class="dropdown profile-action">
+              <a
+                href="#"
+                class="action-icon dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="material-icons">more_vert</i></a
+              >
+              <div class="dropdown-menu dropdown-menu-right">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_employee"
+                  ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_employee"
+                  ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                >
+              </div>
+            </div>
+            <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+              <a href="profile">John Doe</a>
+            </h4>
+            <div class="small text-muted">Web Designer</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          <div class="profile-widget">
+            <div class="profile-img">
+              <a href="profile" class="avatar"
+                ><img
+                  src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-09.jpg"
+                  alt=""
+              /></a>
+            </div>
+            <div class="dropdown profile-action">
+              <a
+                href="#"
+                class="action-icon dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="material-icons">more_vert</i></a
+              >
+              <div class="dropdown-menu dropdown-menu-right">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_employee"
+                  ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_employee"
+                  ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                >
+              </div>
+            </div>
+            <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+              <a href="profile">Richard Miles</a>
+            </h4>
+            <div class="small text-muted">Web Developer</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          <div class="profile-widget">
+            <div class="profile-img">
+              <a href="profile" class="avatar"
+                ><img
+                  src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-10.jpg"
+                  alt=""
+              /></a>
+            </div>
+            <div class="dropdown profile-action">
+              <a
+                href="#"
+                class="action-icon dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="material-icons">more_vert</i></a
+              >
+              <div class="dropdown-menu dropdown-menu-right">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_employee"
+                  ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_employee"
+                  ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                >
+              </div>
+            </div>
+            <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+              <a href="profile">John Smith</a>
+            </h4>
+            <div class="small text-muted">Android Developer</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          <div class="profile-widget">
+            <div class="profile-img">
+              <a href="profile" class="avatar"
+                ><img
+                  src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-05.jpg"
+                  alt=""
+              /></a>
+            </div>
+            <div class="dropdown profile-action">
+              <a
+                href="#"
+                class="action-icon dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="material-icons">more_vert</i></a
+              >
+              <div class="dropdown-menu dropdown-menu-right">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_employee"
+                  ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_employee"
+                  ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                >
+              </div>
+            </div>
+            <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+              <a href="profile">Mike Litorus</a>
+            </h4>
+            <div class="small text-muted">IOS Developer</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          <div class="profile-widget">
+            <div class="profile-img">
+              <a href="profile" class="avatar"
+                ><img
+                  src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-11.jpg"
+                  alt=""
+              /></a>
+            </div>
+            <div class="dropdown profile-action">
+              <a
+                href="#"
+                class="action-icon dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="material-icons">more_vert</i></a
+              >
+              <div class="dropdown-menu dropdown-menu-right">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_employee"
+                  ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_employee"
+                  ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                >
+              </div>
+            </div>
+            <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+              <a href="profile">Wilmer Deluna</a>
+            </h4>
+            <div class="small text-muted">Team Leader</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          <div class="profile-widget">
+            <div class="profile-img">
+              <a href="profile" class="avatar"
+                ><img
+                  src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-12.jpg"
+                  alt=""
+              /></a>
+            </div>
+            <div class="dropdown profile-action">
+              <a
+                href="#"
+                class="action-icon dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="material-icons">more_vert</i></a
+              >
+              <div class="dropdown-menu dropdown-menu-right">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_employee"
+                  ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_employee"
+                  ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                >
+              </div>
+            </div>
+            <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+              <a href="profile">Jeffrey Warden</a>
+            </h4>
+            <div class="small text-muted">Web Developer</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          <div class="profile-widget">
+            <div class="profile-img">
+              <a href="profile" class="avatar"
+                ><img
+                  src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-13.jpg"
+                  alt=""
+              /></a>
+            </div>
+            <div class="dropdown profile-action">
+              <a
+                href="#"
+                class="action-icon dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="material-icons">more_vert</i></a
+              >
+              <div class="dropdown-menu dropdown-menu-right">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_employee"
+                  ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_employee"
+                  ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                >
+              </div>
+            </div>
+            <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+              <a href="profile">Bernardo Galaviz</a>
+            </h4>
+            <div class="small text-muted">Web Developer</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          <div class="profile-widget">
+            <div class="profile-img">
+              <a href="profile" class="avatar"
+                ><img
+                  src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-01.jpg"
+                  alt=""
+              /></a>
+            </div>
+            <div class="dropdown profile-action">
+              <a
+                href="#"
+                class="action-icon dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="material-icons">more_vert</i></a
+              >
+              <div class="dropdown-menu dropdown-menu-right">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_employee"
+                  ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_employee"
+                  ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                >
+              </div>
+            </div>
+            <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+              <a href="profile">Lesley Grauer</a>
+            </h4>
+            <div class="small text-muted">Team Leader</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          <div class="profile-widget">
+            <div class="profile-img">
+              <a href="profile" class="avatar"
+                ><img
+                  src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-16.jpg"
+                  alt=""
+              /></a>
+            </div>
+            <div class="dropdown profile-action">
+              <a
+                href="#"
+                class="action-icon dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="material-icons">more_vert</i></a
+              >
+              <div class="dropdown-menu dropdown-menu-right">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_employee"
+                  ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_employee"
+                  ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                >
+              </div>
+            </div>
+            <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+              <a href="profile">Jeffery Lalor</a>
+            </h4>
+            <div class="small text-muted">Team Leader</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          <div class="profile-widget">
+            <div class="profile-img">
+              <a href="profile" class="avatar"
+                ><img
+                  src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-04.jpg"
+                  alt=""
+              /></a>
+            </div>
+            <div class="dropdown profile-action">
+              <a
+                href="#"
+                class="action-icon dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="material-icons">more_vert</i></a
+              >
+              <div class="dropdown-menu dropdown-menu-right">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_employee"
+                  ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_employee"
+                  ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                >
+              </div>
+            </div>
+            <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+              <a href="profile">Loren Gatlin</a>
+            </h4>
+            <div class="small text-muted">Android Developer</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          <div class="profile-widget">
+            <div class="profile-img">
+              <a href="profile" class="avatar"
+                ><img
+                  src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-03.jpg"
+                  alt=""
+              /></a>
+            </div>
+            <div class="dropdown profile-action">
+              <a
+                href="#"
+                class="action-icon dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="material-icons">more_vert</i></a
+              >
+              <div class="dropdown-menu dropdown-menu-right">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_employee"
+                  ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_employee"
+                  ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                >
+              </div>
+            </div>
+            <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+              <a href="profile">Tarah Shropshire</a>
+            </h4>
+            <div class="small text-muted">Android Developer</div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          <div class="profile-widget">
+            <div class="profile-img">
+              <a href="profile" class="avatar"
+                ><img
+                  src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-08.jpg"
+                  alt=""
+              /></a>
+            </div>
+            <div class="dropdown profile-action">
+              <a
+                href="#"
+                class="action-icon dropdown-toggle"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                ><i class="material-icons">more_vert</i></a
+              >
+              <div class="dropdown-menu dropdown-menu-right">
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_employee"
+                  ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_employee"
+                  ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                >
+              </div>
+            </div>
+            <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+              <a href="profile">Catherine Manseau</a>
+            </h4>
+            <div class="small text-muted">Android Developer</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="add_employee" class="modal custom-modal fade" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Add Employee</h5>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label"
+                      >First Name <span class="text-danger">*</span></label
+                    >
+                    <input class="form-control" type="text" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Last Name</label>
+                    <input class="form-control" type="text" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label"
+                      >Username <span class="text-danger">*</span></label
+                    >
+                    <input class="form-control" type="text" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label"
+                      >Email <span class="text-danger">*</span></label
+                    >
+                    <input class="form-control" type="email" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Password</label>
+                    <input class="form-control" type="password" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Confirm Password</label>
+                    <input class="form-control" type="password" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label"
+                      >Employee ID <span class="text-danger">*</span></label
+                    >
+                    <input type="text" class="form-control" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label"
+                      >Joining Date <span class="text-danger">*</span></label
+                    >
+                    <div class="cal-icon">
+                      <input class="form-control datetimepicker" type="text" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Phone </label>
+                    <input class="form-control" type="text" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Company</label>
+                    <select class="select">
+                      <option value="">Global Technologies</option>
+                      <option value="1">Delta Infotech</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Department <span class="text-danger">*</span></label>
+                    <select class="select">
+                      <option>Select Department</option>
+                      <option>Web Development</option>
+                      <option>IT Management</option>
+                      <option>Marketing</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label
+                      >Designation <span class="text-danger">*</span></label
+                    >
+                    <select class="select">
+                      <option>Select Designation</option>
+                      <option>Web Designer</option>
+                      <option>Web Developer</option>
+                      <option>Android Developer</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="table-responsive m-t-15">
+                <table class="table table-striped custom-table">
+                  <thead>
+                    <tr>
+                      <th>Module Permission</th>
+                      <th class="text-center">Read</th>
+                      <th class="text-center">Write</th>
+                      <th class="text-center">Create</th>
+                      <th class="text-center">Delete</th>
+                      <th class="text-center">Import</th>
+                      <th class="text-center">Export</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Holidays</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Leaves</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Clients</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Projects</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Tasks</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Chats</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Assets</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Timing Sheets</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="submit-section">
+                <button class="btn btn-primary submit-btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="edit_employee" class="modal custom-modal fade" role="dialog">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Edit Employee</h5>
+            <button
+              type="button"
+              class="close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label"
+                      >First Name <span class="text-danger">*</span></label
+                    >
+                    <input class="form-control" value="John" type="text" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Last Name</label>
+                    <input class="form-control" value="Doe" type="text" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label"
+                      >Username <span class="text-danger">*</span></label
+                    >
+                    <input class="form-control" value="johndoe" type="text" />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label"
+                      >Email <span class="text-danger">*</span></label
+                    >
+                    <input
+                      class="form-control"
+                      value="johndoe@example.com"
+                      type="email"
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Password</label>
+                    <input
+                      class="form-control"
+                      value="johndoe"
+                      type="password"
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Confirm Password</label>
+                    <input
+                      class="form-control"
+                      value="johndoe"
+                      type="password"
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label"
+                      >Employee ID <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      value="FT-0001"
+                      readonly
+                      class="form-control floating"
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label"
+                      >Joining Date <span class="text-danger">*</span></label
+                    >
+                    <div class="cal-icon">
+                      <input class="form-control datetimepicker" type="text" />
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Phone </label>
+                    <input
+                      class="form-control"
+                      value="9876543210"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label class="col-form-label">Company</label>
+                    <select class="select">
+                      <option>Global Technologies</option>
+                      <option>Delta Infotech</option>
+                      <option selected>International Software Inc</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Department <span class="text-danger">*</span></label>
+                    <select class="select">
+                      <option>Select Department</option>
+                      <option>Web Development</option>
+                      <option>IT Management</option>
+                      <option>Marketing</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label
+                      >Designation <span class="text-danger">*</span></label
+                    >
+                    <select class="select">
+                      <option>Select Designation</option>
+                      <option>Web Designer</option>
+                      <option>Web Developer</option>
+                      <option>Android Developer</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="table-responsive m-t-15">
+                <table class="table table-striped custom-table">
+                  <thead>
+                    <tr>
+                      <th>Module Permission</th>
+                      <th class="text-center">Read</th>
+                      <th class="text-center">Write</th>
+                      <th class="text-center">Create</th>
+                      <th class="text-center">Delete</th>
+                      <th class="text-center">Import</th>
+                      <th class="text-center">Export</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Holidays</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Leaves</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Clients</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Projects</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Tasks</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Chats</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Assets</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>Timing Sheets</td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input checked="" type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                      <td class="text-center">
+                        <input type="checkbox" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="submit-section">
+                <button class="btn btn-primary submit-btn">Save</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal custom-modal fade" id="delete_employee" role="dialog">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-body">
+            <div class="form-header">
+              <h3>Delete Employee</h3>
+              <p>Are you sure want to delete?</p>
+            </div>
+            <div class="modal-btn delete-action">
+              <div class="row">
+                <div class="col-6">
+                  <a
+                    href="javascript:void(0);"
+                    class="btn btn-primary continue-btn"
+                    >Delete</a
+                  >
+                </div>
+                <div class="col-6">
+                  <a
+                    href="javascript:void(0);"
+                    data-bs-dismiss="modal"
+                    class="btn btn-primary cancel-btn"
+                    >Cancel</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <!-- <div class="page-wrapper">
+    <div class="content container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="welcome-box">
+            <div class="welcome-img">
+              <img
+                alt=""
+                src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-02.jpg"
+              />
+            </div>
+            <div class="welcome-det">
+              <h3>Welcome, John Doe</h3>
+              <p>Monday, 20 May 2019</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-8 col-md-8">
+          <section class="dash-section">
+            <h1 class="dash-sec-title">Today</h1>
+            <div class="dash-sec-content">
+              <div class="dash-info-list">
+                <a href="#" class="dash-card text-danger">
+                  <div class="dash-card-container">
+                    <div class="dash-card-icon">
+                      <i class="fa fa-hourglass-o"></i>
+                    </div>
+                    <div class="dash-card-content">
+                      <p>Richard Miles is off sick today</p>
+                    </div>
+                    <div class="dash-card-avatars">
+                      <div class="e-avatar">
+                        <img
+                          src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-09.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="dash-info-list">
+                <a href="#" class="dash-card">
+                  <div class="dash-card-container">
+                    <div class="dash-card-icon">
+                      <i class="fa fa-suitcase"></i>
+                    </div>
+                    <div class="dash-card-content">
+                      <p>You are away today</p>
+                    </div>
+                    <div class="dash-card-avatars">
+                      <div class="e-avatar">
+                        <img
+                          src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-02.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+              <div class="dash-info-list">
+                <a href="#" class="dash-card">
+                  <div class="dash-card-container">
+                    <div class="dash-card-icon">
+                      <i class="fa fa-building-o"></i>
+                    </div>
+                    <div class="dash-card-content">
+                      <p>You are working from home today</p>
+                    </div>
+                    <div class="dash-card-avatars">
+                      <div class="e-avatar">
+                        <img
+                          src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-02.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+          <section class="dash-section">
+            <h1 class="dash-sec-title">Tomorrow</h1>
+            <div class="dash-sec-content">
+              <div class="dash-info-list">
+                <div class="dash-card">
+                  <div class="dash-card-container">
+                    <div class="dash-card-icon">
+                      <i class="fa fa-suitcase"></i>
+                    </div>
+                    <div class="dash-card-content">
+                      <p>2 people will be away tomorrow</p>
+                    </div>
+                    <div class="dash-card-avatars">
+                      <a href="#" class="e-avatar"
+                        ><img
+                          src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-04.jpg"
+                          alt=""
+                      /></a>
+                      <a href="#" class="e-avatar"
+                        ><img
+                          src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-08.jpg"
+                          alt=""
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="dash-section">
+            <h1 class="dash-sec-title">Next seven days</h1>
+            <div class="dash-sec-content">
+              <div class="dash-info-list">
+                <div class="dash-card">
+                  <div class="dash-card-container">
+                    <div class="dash-card-icon">
+                      <i class="fa fa-suitcase"></i>
+                    </div>
+                    <div class="dash-card-content">
+                      <p>2 people are going to be away</p>
+                    </div>
+                    <div class="dash-card-avatars">
+                      <a href="#" class="e-avatar"
+                        ><img
+                          src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-05.jpg"
+                          alt=""
+                      /></a>
+                      <a href="#" class="e-avatar"
+                        ><img
+                          src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-07.jpg"
+                          alt=""
+                      /></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-info-list">
+                <div class="dash-card">
+                  <div class="dash-card-container">
+                    <div class="dash-card-icon">
+                      <i class="fa fa-user-plus"></i>
+                    </div>
+                    <div class="dash-card-content">
+                      <p>Your first day is going to be on Thursday</p>
+                    </div>
+                    <div class="dash-card-avatars">
+                      <div class="e-avatar">
+                        <img
+                          src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-02.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="dash-info-list">
+                <a href="" class="dash-card">
+                  <div class="dash-card-container">
+                    <div class="dash-card-icon">
+                      <i class="fa fa-calendar"></i>
+                    </div>
+                    <div class="dash-card-content">
+                      <p>It's Spring Bank Holiday on Monday</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="col-lg-4 col-md-4">
+          <div class="dash-sidebar">
+            <section>
+              <h5 class="dash-title">Projects</h5>
+              <div class="card">
+                <div class="card-body">
+                  <div class="time-list">
+                    <div class="dash-stats-list">
+                      <h4>71</h4>
+                      <p>Total Tasks</p>
+                    </div>
+                    <div class="dash-stats-list">
+                      <h4>14</h4>
+                      <p>Pending Tasks</p>
+                    </div>
+                  </div>
+                  <div class="request-btn">
+                    <div class="dash-stats-list">
+                      <h4>2</h4>
+                      <p>Total Projects</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h5 class="dash-title">Your Leave</h5>
+              <div class="card">
+                <div class="card-body">
+                  <div class="time-list">
+                    <div class="dash-stats-list">
+                      <h4>4.5</h4>
+                      <p>Leave Taken</p>
+                    </div>
+                    <div class="dash-stats-list">
+                      <h4>12</h4>
+                      <p>Remaining</p>
+                    </div>
+                  </div>
+                  <div class="request-btn">
+                    <a class="btn btn-primary" href="#">Apply Leave</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h5 class="dash-title">Your time off allowance</h5>
+              <div class="card">
+                <div class="card-body">
+                  <div class="time-list">
+                    <div class="dash-stats-list">
+                      <h4>5.0 Hours</h4>
+                      <p>Approved</p>
+                    </div>
+                    <div class="dash-stats-list">
+                      <h4>15 Hours</h4>
+                      <p>Remaining</p>
+                    </div>
+                  </div>
+                  <div class="request-btn">
+                    <a class="btn btn-primary" href="#">Apply Time Off</a>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <section>
+              <h5 class="dash-title">Upcoming Holiday</h5>
+              <div class="card">
+                <div class="card-body text-center">
+                  <h4 class="holiday-title mb-0">Mon 20 May 2019 - Ramzan</h4>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
 </div>
 
 <script>
