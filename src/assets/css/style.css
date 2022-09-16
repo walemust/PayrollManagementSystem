@@ -2490,7 +2490,7 @@ input[type=file].form-control {
 }
 
 .form-text {
-  color: #999;
+  color: rgb(245, 240, 240);
   font-size: 12px;
   margin: 7px 0
 }

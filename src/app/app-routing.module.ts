@@ -6,6 +6,10 @@ import { EditEmployeeComponent } from './components/employees/edit-employee/edit
 import { EmployeesListComponent } from './components/employees/employees-list/employees-list.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
+import { LoginComponent } from './login/login.component';
+import { ProfileComponent } from './profile/profile.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   // {
@@ -31,6 +35,22 @@ const routes: Routes = [
   {
     path: 'dashboard',
     component: DashboardComponent,
+  },
+  {
+    path: 'login',
+    component: LoginComponent,
+  },
+  {
+    path: 'employee-dashboard',
+    component: EmployeeDashboardComponent,
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
   },
 ];
 
