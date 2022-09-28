@@ -11,11 +11,16 @@ import { EmployeesService } from 'src/app/services/employees.service';
 export class AddEmployeeComponent implements OnInit {
   addEmployee: Employee = {
     id: 0,
+    staffID: '',
     name: '',
     email: '',
     phone: 0,
     salary: 0,
     department: '',
+    dateOfBirth: '',
+    password: '',
+    message: '',
+    code: '',
   };
 
   constructor(

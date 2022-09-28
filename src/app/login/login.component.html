@@ -19,19 +19,22 @@
             <form
               class="needs-validation custom-form mt-4 pt-2"
               novalidate=""
+              (ngSubmit)="SignInEmployee()"
               action="https://smarthr-ci.dreamguystech.com/template/dark/public/dashboard"
             >
               <div class="form-group">
-                <label for="useremail" class="form-label">Email</label>
+                <label for="staffID" class="form-label">Email</label>
                 <input
-                  type="email"
+                  type="text"
                   class="form-control"
-                  id="useremail"
-                  placeholder="Enter email"
+                  id="staffID"
+                  placeholder="Enter Id"
                   required=""
-                  value="admin@example.com"
+                  [(ngModel)]="SignIn.staffID"
+                  value="FE44"
+                  name="staffID"
                 />
-                <div class="invalid-feedback">Please Enter Email</div>
+                <div class="invalid-feedback">Please Enter StaffId</div>
               </div>
               <div class="form-group">
                 <div class="row">
@@ -53,7 +56,9 @@
                     id="password"
                     placeholder="Enter password"
                     required=""
-                    value="123456"
+                    [(ngModel)]="SignIn.password"
+                    value="grete123"
+                    name="password"
                   />
                   <div class="invalid-feedback">Please Enter Password</div>
                   <span class="fa fa-eye-slash" id="toggle-password"></span>

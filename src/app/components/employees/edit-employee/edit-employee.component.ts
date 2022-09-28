@@ -12,11 +12,16 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class EditEmployeeComponent implements OnInit {
   employeeDetails: Employee = {
     id: 0,
+    staffID: '',
     name: '',
     email: '',
     phone: 0,
     salary: 0,
     department: '',
+    dateOfBirth: '',
+    password: '',
+    message: '',
+    code: '',
   };
   //employeeValues!: FormGroup;
 

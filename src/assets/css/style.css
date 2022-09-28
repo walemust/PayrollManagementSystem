@@ -3670,6 +3670,11 @@ input[type=file].form-control {
   color: #333
 }
 
+.staff-grid-row {
+  display: flex;
+  justify-content: center;
+}
+
 .nav-tabs.nav-tabs-top li a.active {
   border-top-color: #ff9b44;
   border-width: 2px 0 0;
@@ -6573,19 +6578,42 @@ textarea.form-control {
   display: none
 }
 
-.profile-widget {
+/* .profile-container {
   background-color: #16191c;
   border: 1px solid #2e3840;
   margin-bottom: 30px;
   padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
   position: relative;
   overflow: hidden;
   border-radius: 4px;
+  display: flex;
+  width: 25%;
+  justify-content: center;
   -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
   -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2)
-}
+} */
+
+/* .profile-widget {
+  background-color: red !important;
+  border: 1px solid #2e3840;
+  margin-bottom: 30px;
+  padding: 20px;
+  display: flex !important;
+  flex-wrap: wrap;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  width: 25% !important;
+  justify-content: center;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+  -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .2)
+} */
 
 .profile-widget .profile-img {
   cursor: pointer;

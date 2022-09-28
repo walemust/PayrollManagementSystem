@@ -58,7 +58,7 @@ export class EmployeesService {
       );
   }
 
-  getEmployee(id: number): Observable<Employee> {
+  getEmployee(id: any): Observable<Employee> {
     return this.http
       .get<Employee>('http://localhost:41712/api/Employees/' + id)
       .pipe(
@@ -98,6 +98,14 @@ export class EmployeesService {
         tap((res) => console.log(JSON.stringify(res))),
         catchError(this.handleError)
       );
+  }
+
+  SignInEmployee(SignIn: Employee): Observable<Employee> {
+    console.log(SignIn);
+    return this.http.post<Employee>(
+      'http://localhost:41712/api/Register/signin',
+      SignIn
+    );
   }
 
   private handleError(err: HttpErrorResponse) {

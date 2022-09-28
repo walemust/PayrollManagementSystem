@@ -3,13 +3,13 @@
   <div class="main-wrapper">
     <div class="account-content">
       <div class="container">
-        <div class="account-logo">
+        <!-- <div class="account-logo">
           <a href="dashboard"
             ><img
               src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/logo2.png"
               alt="Dreamguy's Technologies"
           /></a>
-        </div>
+        </div> -->
 
         <div class="account-box">
           <div class="account-wrapper">
@@ -21,40 +21,70 @@
               novalidate
               action="https://smarthr-ci.dreamguystech.com/template/dark/public/dashboard"
             >
-              <div class="form-group">
-                <label for="useremail" class="form-label">Email</label>
-                <input
-                  type="email"
-                  class="form-control"
-                  id="useremail"
-                  placeholder="Enter email"
-                  required
-                />
-                <div class="invalid-feedback">Please Enter Email</div>
-              </div>
-              <div class="form-group">
-                <label for="userpassword" class="form-label">Password</label>
-                <input
-                  type="password"
-                  class="form-control"
-                  id="password"
-                  placeholder="Enter password"
-                  required
-                />
-                <div class="invalid-feedback">Please Enter Password</div>
-              </div>
-              <div class="form-group">
-                <label for="userpassword" class="form-label"
-                  >Repeat Password</label
-                >
-                <input
-                  type="password"
-                  class="form-control"
-                  id="userpassword"
-                  placeholder="Enter password"
-                  required
-                />
-                <div class="invalid-feedback">Please Enter Repeat Password</div>
+              <div class="row">
+                <div class="col-sm-6 form-group">
+                  <label for="useremail" class="col-form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="useremail"
+                    placeholder="Enter email"
+                    required
+                  />
+                  <div class="invalid-feedback">Please Enter Email</div>
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="name" class="col-form-label">Name</label>
+                  <input
+                    type="name"
+                    class="form-control"
+                    id="name"
+                    placeholder="Enter name"
+                    required
+                  />
+                  <div class="invalid-feedback">Please Enter Name</div>
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="department" class="col-form-label"
+                    >Department</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="department"
+                    placeholder="Enter department"
+                    required
+                  />
+                  <div class="invalid-feedback">Please Enter Department</div>
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="userpassword" class="col-form-label"
+                    >Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="Enter password"
+                    required
+                  />
+                  <div class="invalid-feedback">Please Enter Password</div>
+                </div>
+                <div class="col-sm-6 form-group">
+                  <label for="userpassword" class="col-form-label"
+                    >Repeat Password</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="userpassword"
+                    placeholder="Enter password"
+                    required
+                  />
+                  <div class="invalid-feedback">
+                    Please Enter Repeat Password
+                  </div>
+                </div>
               </div>
               <div class="form-group text-center">
                 <button class="btn btn-primary account-btn" type="submit">

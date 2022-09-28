@@ -10,23 +10,25 @@ import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashbo
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
+import { SalaryComponent } from './salary/salary.component';
 
 const routes: Routes = [
   // {
   //   path: '',
   //   component: AppComponent,
   // },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
   {
     path: 'employees',
     component: EmployeesListComponent,
   },
   {
     path: 'employees/add',
-    component: AddEmployeeComponent,
+    component: EmployeesListComponent,
   },
   {
     path: 'employees/edit/:id',
-    component: EditEmployeeComponent,
+    component: EmployeesListComponent,
   },
   {
     path: 'homepage',
@@ -45,12 +47,16 @@ const routes: Routes = [
     component: EmployeeDashboardComponent,
   },
   {
-    path: 'profile',
+    path: 'profile/:id',
     component: ProfileComponent,
   },
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'salary',
+    component: SalaryComponent,
   },
 ];
 

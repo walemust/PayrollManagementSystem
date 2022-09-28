@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { EmployeeDashboardComponent } from './employee-dashboard/employee-dashboard.component';
 import { ProfileComponent } from './profile/profile.component';
 import { RegisterComponent } from './register/register.component';
+import { SalaryComponent } from './salary/salary.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { RegisterComponent } from './register/register.component';
     EmployeeDashboardComponent,
     ProfileComponent,
     RegisterComponent,
+    SalaryComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],

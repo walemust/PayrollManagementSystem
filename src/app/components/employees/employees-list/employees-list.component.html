@@ -96,9 +96,86 @@
           </div>
         </div>
 
-        <div class="row staff-grid-row">
-          <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
-            <div class="profile-widget">
+        <div class="row">
+          <div
+            class="container col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3 profile-container"
+          >
+            <div class="profile-widget" *ngFor="let employee of employees">
+              <div class="profile-img">
+                <a href="profile" class="avatar"
+                  ><img
+                    src="https://smarthr-ci.dreamguystech.com/template/dark/public/assets/img/profiles/avatar-02.jpg"
+                    alt=""
+                /></a>
+              </div>
+              <div class="dropdown profile-action">
+                <a
+                  href="#"
+                  class="action-icon dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  ><i class="material-icons">more_vert</i></a
+                >
+                <div class="dropdown-menu dropdown-menu-right">
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-bs-toggle="modal"
+                    (click)="editEmployee(employee.id)"
+                    data-bs-target="#edit_employee"
+                    ><i class="fa fa-pencil m-r-5"></i> Edit</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#delete_employee"
+                    ><i class="fa fa-trash-o m-r-5"></i> Delete</a
+                  >
+                </div>
+              </div>
+              <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+                <a href="profile">{{ employee.name }}</a>
+              </h4>
+              <div class="small text-muted">{{ employee.department }}</div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row"> -->
+        <!-- <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let employee of employees; index as i">
+                <td>
+                  <h4 class="user-name m-t-10 mb-0 text-ellipsis">
+                    <a href="profile">{{ employee.name }}</a>
+                  </h4>
+                </td>
+                <td>
+                  <div class="small text-muted">{{ employee.department }}</div>
+                </td>
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.email }}</td>
+                t
+                <td>{{ employee.salary }}</td>
+                <td>{{ employee.phone }}</td>
+                <td>
+            <a [routerLink]="['/employees', 'edit', employee.id]">View</a>
+          </td>
+              </tr>
+            </tbody>
+          </table> -->
+        <!-- <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+            <div class="profile-widget" *ngFor="let employee of employees">
               <div class="profile-img">
                 <a href="profile" class="avatar"
                   ><img
@@ -132,12 +209,12 @@
                 </div>
               </div>
               <h4 class="user-name m-t-10 mb-0 text-ellipsis">
-                <a href="profile">John Doe</a>
+                <a href="profile">{{ employee.name }}</a>
               </h4>
-              <div class="small text-muted">Web Designer</div>
+              <div class="small text-muted">{{ employee.department }}</div>
             </div>
-          </div>
-          <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
+          </div> -->
+        <!-- <div class="col-md-4 col-sm-6 col-12 col-lg-4 col-xl-3">
             <div class="profile-widget">
               <div class="profile-img">
                 <a href="profile" class="avatar"
@@ -576,8 +653,8 @@
               </h4>
               <div class="small text-muted">Android Developer</div>
             </div>
-          </div>
-        </div>
+          </div> -->
+        <!-- </div> -->
       </div>
 
       <div id="add_employee" class="modal custom-modal fade" role="dialog">
@@ -595,14 +672,19 @@
               </button>
             </div>
             <div class="modal-body">
-              <form>
+              <form #form="ngForm" (ngSubmit)="addEmployees()">
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label class="col-form-label"
                         >Full Name <span class="text-danger">*</span></label
                       >
-                      <input class="form-control" type="text" />
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="name"
+                        [(ngModel)]="addEmployee.name"
+                      />
                     </div>
                   </div>
                   <!-- <div class="col-sm-6">
@@ -611,26 +693,36 @@
                       <input class="form-control" type="text" />
                     </div>
                   </div> -->
-                  <div class="col-sm-6">
+                  <!-- <div class="col-sm-6">
                     <div class="form-group">
                       <label class="col-form-label"
                         >Username <span class="text-danger">*</span></label
                       >
                       <input class="form-control" type="text" />
                     </div>
-                  </div>
+                  </div> -->
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label class="col-form-label"
                         >Email <span class="text-danger">*</span></label
                       >
-                      <input class="form-control" type="email" />
+                      <input
+                        class="form-control"
+                        type="email"
+                        name="email"
+                        [(ngModel)]="addEmployee.email"
+                      />
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label class="col-form-label">Password</label>
-                      <input class="form-control" type="password" />
+                      <input
+                        class="form-control"
+                        type="password"
+                        name="password"
+                        [(ngModel)]="addEmployee.password"
+                      />
                     </div>
                   </div>
                   <!-- <div class="col-sm-6">
@@ -642,9 +734,14 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label class="col-form-label"
-                        >Employee ID <span class="text-danger">*</span></label
+                        >Staff ID <span class="text-danger">*</span></label
                       >
-                      <input type="text" class="form-control" />
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="staffID"
+                        [(ngModel)]="addEmployee.staffID"
+                      />
                     </div>
                   </div>
                   <!-- <div class="col-sm-6">
@@ -663,7 +760,12 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label class="col-form-label">Phone </label>
-                      <input class="form-control" type="text" />
+                      <input
+                        class="form-control"
+                        type="number"
+                        name="phone"
+                        [(ngModel)]="addEmployee.phone"
+                      />
                     </div>
                   </div>
                   <!-- <div class="col-sm-6">
@@ -677,15 +779,21 @@
                   </div> -->
                   <div class="col-md-6">
                     <div class="form-group">
-                      <label
+                      <label class="col-form-label"
                         >Department <span class="text-danger">*</span></label
                       >
-                      <select class="select">
+                      <input
+                        class="form-control"
+                        type="text"
+                        name="department"
+                        [(ngModel)]="addEmployee.department"
+                      />
+                      <!-- <select class="select">
                         <option>Select Department</option>
                         <option>Web Development</option>
                         <option>IT Management</option>
                         <option>Marketing</option>
-                      </select>
+                      </select> -->
                     </div>
                   </div>
                   <!-- <div class="col-md-6">
@@ -888,7 +996,9 @@
                 </table>
               </div> -->
                 <div class="submit-section">
-                  <button class="btn btn-primary submit-btn">Submit</button>
+                  <button class="btn btn-primary submit-btn" type="submit">
+                    Submit
+                  </button>
                 </div>
               </form>
             </div>
@@ -914,14 +1024,20 @@
               </button>
             </div>
             <div class="modal-body">
-              <form>
+              <form #form="ngForm" (ngSubmit)="updateEmployee()">
                 <div class="row">
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label class="col-form-label"
                         >Full Name <span class="text-danger">*</span></label
                       >
-                      <input class="form-control" value="John" type="text" />
+                      <input
+                        class="form-control"
+                        value="John"
+                        type="text"
+                        name="name"
+                        [(ngModel)]="employeeDetails.name"
+                      />
                     </div>
                   </div>
                   <!-- <div class="col-sm-6">
@@ -947,6 +1063,8 @@
                         class="form-control"
                         value="johndoe@example.com"
                         type="email"
+                        name="email"
+                        [(ngModel)]="employeeDetails.email"
                       />
                     </div>
                   </div>
@@ -957,6 +1075,8 @@
                         class="form-control"
                         value="johndoe"
                         type="password"
+                        name="password"
+                        [(ngModel)]="employeeDetails.password"
                       />
                     </div>
                   </div>
@@ -973,13 +1093,15 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label class="col-form-label"
-                        >Employee ID <span class="text-danger">*</span></label
+                        >Staff ID <span class="text-danger">*</span></label
                       >
                       <input
                         type="text"
                         value="FT-0001"
                         readonly
                         class="form-control floating"
+                        name="staffID"
+                        [(ngModel)]="employeeDetails.staffID"
                       />
                     </div>
                   </div>
@@ -1003,6 +1125,8 @@
                         class="form-control"
                         value="9876543210"
                         type="text"
+                        name="phone"
+                        [(ngModel)]="employeeDetails.phone"
                       />
                     </div>
                   </div>
@@ -1021,12 +1145,17 @@
                       <label
                         >Department <span class="text-danger">*</span></label
                       >
-                      <select class="select">
+                      <input
+                        type="text"
+                        name="department"
+                        [(ngModel)]="employeeDetails.department"
+                      />
+                      <!-- <select class="select">
                         <option>Select Department</option>
                         <option>Web Development</option>
                         <option>IT Management</option>
                         <option>QA</option>
-                      </select>
+                      </select> -->
                     </div>
                   </div>
                   <!-- <div class="col-md-6">
@@ -1229,7 +1358,9 @@
                 </table>
               </div> -->
                 <div class="submit-section">
-                  <button class="btn btn-primary submit-btn">Save</button>
+                  <button class="btn btn-primary submit-btn" type="submit">
+                    Save
+                  </button>
                 </div>
               </form>
             </div>
@@ -1251,6 +1382,7 @@
                     <a
                       href="javascript:void(0);"
                       class="btn btn-primary continue-btn"
+                      (click)="deleteEmployee(employeeDetails.id)"
                       >Delete</a
                     >
                   </div>
