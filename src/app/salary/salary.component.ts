@@ -10,16 +10,34 @@ import { EmployeesService } from '../services/employees.service';
 export class SalaryComponent implements OnInit {
   employees: Employee[] = [];
 
+  name: any;
+
+  searchText: any;
+  p: number = 1;
+  collection!: any[];
+
   constructor(private employeesService: EmployeesService) {}
 
   ngOnInit(): void {
     this.employeesService.getAllEmployees().subscribe({
       next: (employees) => {
         this.employees = employees;
+
+        //let ddd == this.data.filter(p => p.bankName == val)
       },
       error: (response) => {
         console.log(response);
       },
     });
+  }
+
+  Search() {
+    if (this.name == '') {
+      this.ngOnInit();
+    } else {
+      this.employees = this.employees.filter((res) => {
+        return res.name.toLocaleLowerCase().match(this.name);
+      });
+    }
   }
 }

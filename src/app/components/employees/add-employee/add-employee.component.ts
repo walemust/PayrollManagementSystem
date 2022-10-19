@@ -21,6 +21,7 @@ export class AddEmployeeComponent implements OnInit {
     password: '',
     message: '',
     code: '',
+    status: 0,
   };
 
   constructor(

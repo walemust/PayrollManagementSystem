@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
     password: '',
     message: '',
     code: '',
+    status: 0,
   };
 
   constructor(

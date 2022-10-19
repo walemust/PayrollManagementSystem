@@ -11,4 +11,5 @@ export interface Employee {
   message: string;
   code: string;
   password: string;
+  status: number;
 }

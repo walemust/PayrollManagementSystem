@@ -21,6 +21,7 @@ export class EmployeeDashboardComponent implements OnInit {
     password: '',
     message: '',
     code: '',
+    status: 0,
   };
 
   currentDate = new Date();
@@ -51,7 +52,7 @@ export class EmployeeDashboardComponent implements OnInit {
   getEmployee(id: any) {
     this.employeeService.getEmployee(id).subscribe({
       next: (eachEmployee) => {
-        this.router.navigate(['employee-dashboard/:id']);
+        this.router.navigate([`employee-dashboard/${eachEmployee.id}`]);
         console.log(eachEmployee);
       },
     });

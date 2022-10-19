@@ -25,6 +25,7 @@ export class EmployeesListComponent implements OnInit {
     password: '',
     message: '',
     code: '',
+    status: 0,
   };
 
   //Edit employee
@@ -40,6 +41,7 @@ export class EmployeesListComponent implements OnInit {
     password: '',
     message: '',
     code: '',
+    status: 0,
   };
 
   constructor(

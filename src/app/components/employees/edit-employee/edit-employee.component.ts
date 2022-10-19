@@ -22,6 +22,7 @@ export class EditEmployeeComponent implements OnInit {
     password: '',
     message: '',
     code: '',
+    status: 0,
   };
   //employeeValues!: FormGroup;
 

@@ -22,6 +22,7 @@ export class LoginComponent implements OnInit {
     password: '',
     message: '',
     code: '',
+    status: 0,
   };
 
   constructor(
