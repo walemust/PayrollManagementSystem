@@ -44,6 +44,9 @@ export class EmployeesListComponent implements OnInit {
     status: 0,
   };
 
+  name: any;
+  staffid: any;
+
   constructor(
     private employeesService: EmployeesService,
     private employeeService: EmployeesService,
@@ -113,5 +116,25 @@ export class EmployeesListComponent implements OnInit {
         this.router.navigate(['employees']);
       },
     });
+  }
+
+  Search() {
+    if (this.name == '') {
+      this.ngOnInit();
+    } else {
+      this.employees = this.employees.filter((res) => {
+        return res.name.toLocaleLowerCase().match(this.name);
+      });
+    }
+  }
+
+  SearchId() {
+    if (this.staffid == '') {
+      this.ngOnInit();
+    } else {
+      this.employees = this.employees.filter((res) => {
+        return res.staffID.toLocaleLowerCase().match(this.staffid);
+      });
+    }
   }
 }

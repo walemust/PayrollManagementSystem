@@ -32,16 +32,21 @@ export class EmployeeDashboardComponent implements OnInit {
     private router: Router
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.route.paramMap.subscribe({
       next: (params) => {
         const id: any = params.get('id');
 
-        if (id) {
-          this.employeeService.getEmployee(id).subscribe({
+        let b = Number(localStorage.getItem('employeeId'));
+
+        // alert(b);
+        if (b) {
+          this.employeeService.getEmployee(b).subscribe({
             next: (response) => {
-              this.router.navigate([`employee-dashboard/${response.id}`]);
+              //this.router.navigate([`employee-dashboard/${response.id}`]);
               this.eachEmployee = response;
+
+              console.log('employee-dashboard', this.eachEmployee);
             },
           });
         }

@@ -1,4 +1,5 @@
 <!-- <p>register works!</p> -->
+
 <body class="account-page">
   <div class="main-wrapper">
     <div class="account-content">
@@ -16,75 +17,40 @@
             <h3 class="account-title">Register</h3>
             <p class="account-subtitle">Access to our dashboard</p>
 
-            <form
-              class="needs-validation custom-form mt-4 pt-2"
-              novalidate
-              action="https://smarthr-ci.dreamguystech.com/template/dark/public/dashboard"
-            >
+            <form class="needs-validation custom-form mt-4 pt-2" novalidate (ngSubmit)="RegisterEmployee()"
+              action="https://smarthr-ci.dreamguystech.com/template/dark/public/dashboard">
               <div class="row">
                 <div class="col-sm-6 form-group">
-                  <label for="useremail" class="col-form-label">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="useremail"
-                    placeholder="Enter email"
-                    required
-                  />
-                  <div class="invalid-feedback">Please Enter Email</div>
+                  <label for="text" class="col-form-label">StaffID</label>
+                  <input type="text" class="form-control" id="staffID" placeholder="Enter staffID" required
+                    [(ngModel)]="Register.staffID" />
+                  <div class="invalid-feedback">Please Enter StaffID</div>
                 </div>
                 <div class="col-sm-6 form-group">
                   <label for="name" class="col-form-label">Name</label>
-                  <input
-                    type="name"
-                    class="form-control"
-                    id="name"
-                    placeholder="Enter name"
-                    required
-                  />
+                  <input type="name" class="form-control" id="name" placeholder="Enter name" required
+                    [(ngModel)]="Register.name" />
                   <div class="invalid-feedback">Please Enter Name</div>
                 </div>
                 <div class="col-sm-6 form-group">
-                  <label for="department" class="col-form-label"
-                    >Department</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="department"
-                    placeholder="Enter department"
-                    required
-                  />
+                  <label for="department" class="col-form-label">Department</label>
+                  <input type="text" class="form-control" id="department" placeholder="Enter department" required
+                    [(ngModel)]="Register.department" />
                   <div class="invalid-feedback">Please Enter Department</div>
                 </div>
                 <div class="col-sm-6 form-group">
-                  <label for="userpassword" class="col-form-label"
-                    >Password</label
-                  >
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="password"
-                    placeholder="Enter password"
-                    required
-                  />
+                  <label for="userpassword" class="col-form-label">Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Enter password" required
+                    [(ngModel)]="Register.password" />
                   <div class="invalid-feedback">Please Enter Password</div>
                 </div>
-                <div class="col-sm-6 form-group">
-                  <label for="userpassword" class="col-form-label"
-                    >Repeat Password</label
-                  >
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="userpassword"
-                    placeholder="Enter password"
-                    required
-                  />
+                <!-- <div class="col-sm-6 form-group">
+                  <label for="userpassword" class="col-form-label">Repeat Password</label>
+                  <input type="password" class="form-control" id="userpassword" placeholder="Enter password" required />
                   <div class="invalid-feedback">
                     Please Enter Repeat Password
                   </div>
-                </div>
+                </div> -->
               </div>
               <div class="form-group text-center">
                 <button class="btn btn-primary account-btn" type="submit">

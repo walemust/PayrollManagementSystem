@@ -73,7 +73,7 @@
         <div class="row">
           <div class="col-md-12">
             <div class="table-responsive">
-              <table class="table table-striped custom-table datatable" *ngIf="employees && employees.length > 0">
+              <table class="table table-striped custom-table" *ngIf="employees && employees.length > 0">
                 <thead>
                   <tr>
                     <th>Employee</th>
@@ -82,7 +82,7 @@
                     <th>Email</th>
                     <th>Status</th>
                     <th>Salary</th>
-                    <th>Payslip</th>
+                    <!-- <th>Payslip</th> -->
                     <th class="text-end">Action</th>
                   </tr>
                 </thead>
@@ -131,9 +131,9 @@
                     </td>
                     <td>{{ employee.status }}</td>
                     <td>{{ employee.salary | number }}</td>
-                    <td>
+                    <!-- <td>
                       <a class="btn btn-sm btn-primary" href="salary_view">Generate Slip</a>
-                    </td>
+                    </td> -->
                     <td class="text-end">
                       <div class="dropdown dropdown-action">
                         <a href="#" class="action-icon dropdown-toggle" data-bs-toggle="dropdown"

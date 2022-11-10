@@ -108,6 +108,13 @@ export class EmployeesService {
     );
   }
 
+  RegisterEmployee(Register: Employee): Observable<Employee> {
+    return this.http.post<Employee>(
+      'http://localhost:41712/api/Register/register',
+      Register
+    );
+  }
+
   private handleError(err: HttpErrorResponse) {
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {
