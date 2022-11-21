@@ -31,10 +31,10 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {}
 
   RegisterEmployee() {
-    this.employeeService.addEmployees(this.Register).subscribe({
-      next: (employee) => {
+    this.employeeService.RegisterEmployee(this.Register).subscribe({
+      next: (Register) => {
         this.router.navigate(['login']);
-        console.log(employee);
+        console.log(Register);
       },
     });
     console.log(this.Register);
