@@ -48,7 +48,10 @@ export class EmployeesService {
     };
     //addEmployee.id = '00000000-0000-0000-0000-000000000000';
     return this.http
-      .post<Employee>('http://localhost:41712/api/Employees', addEmployee)
+      .post<Employee>(
+        'http://payrollmanagement.somee.com/api/Employees',
+        addEmployee
+      )
       .pipe(
         map((data) => {
           return data;
@@ -60,7 +63,7 @@ export class EmployeesService {
 
   getEmployee(id: any): Observable<Employee> {
     return this.http
-      .get<Employee>('http://localhost:41712/api/Employees/' + id)
+      .get<Employee>('http://payrollmanagement.somee.com/api/Employees/' + id)
       .pipe(
         map((data) => {
           return data;
@@ -76,7 +79,7 @@ export class EmployeesService {
   ): Observable<Employee> {
     return this.http
       .put<Employee>(
-        `http://localhost:41712/api/Employees/${id}`,
+        `http://payrollmanagement.somee.com/api/Employees/${id}`,
         updateEmployeeRequest
       )
       .pipe(
@@ -90,7 +93,9 @@ export class EmployeesService {
 
   deleteEmployee(id: any): Observable<Employee> {
     return this.http
-      .delete<Employee>('http://localhost:41712/api/Employees/' + id)
+      .delete<Employee>(
+        'http://payrollmanagement.somee.com/api/Employees/' + id
+      )
       .pipe(
         map((data) => {
           return data;
@@ -103,14 +108,14 @@ export class EmployeesService {
   SignInEmployee(SignIn: Employee): Observable<Employee> {
     console.log(SignIn);
     return this.http.post<Employee>(
-      'http://localhost:41712/api/Register/signin',
+      'http://payrollmanagement.somee.com/api/Register/signin',
       SignIn
     );
   }
 
   RegisterEmployee(Register: Employee): Observable<Employee> {
     return this.http.post<Employee>(
-      'http://localhost:41712/api/Register/register',
+      'http://payrollmanagement.somee.com/api/Register/register',
       Register
     );
   }
